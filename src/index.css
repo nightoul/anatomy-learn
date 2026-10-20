@@ -8,6 +8,7 @@
   --button-bg: #b91c1c;
   --success: #15803d;
   --success-bg: #f0fdf4;
+  --warning: #d97706;
 
   color-scheme: light dark;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -25,6 +26,7 @@
     --button-bg: #dc2626;
     --success: #16a34a;
     --success-bg: #14532d55;
+    --warning: #d97706;
   }
 }
 
@@ -342,6 +344,8 @@ button.question-chip:hover {
   position: absolute;
   right: 1.5rem;
   bottom: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
 }
 
 .next-button {
@@ -374,4 +378,80 @@ button.question-chip:hover {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.congrats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.congrats h2 {
+  margin: 1.5rem 0 0;
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+}
+
+.congrats-check {
+  display: grid;
+  place-items: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: var(--success);
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  animation: pop 0.5s ease-out;
+}
+
+.congrats.good .congrats-check {
+  background: var(--warning);
+}
+
+.congrats.practice .congrats-check {
+  background: var(--button-bg);
+}
+
+.congrats .subtitle {
+  max-width: 28rem;
+}
+
+.congrats-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.secondary-button {
+  padding: 0.75rem 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  border-color: var(--accent);
+}
+
+.score {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.score strong {
+  color: var(--text);
+  font-size: 3rem;
 }
