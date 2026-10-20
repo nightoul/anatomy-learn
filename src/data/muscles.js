@@ -1,10 +1,462 @@
-import fanImg from '../assets/muscles/fan.svg'
-import fusiformImg from '../assets/muscles/fusiform.svg'
-import strapImg from '../assets/muscles/strap.svg'
+import { FAN, FINGERS, FUSIFORM, OTHER, QUADRILATERAL, SHEET, STRAP } from './shapes.js'
 
-// Placeholder muscles — will be replaced by real data (names, shape, region, ...).
-export const muscles = [
-  { id: 'placeholder-fusiform', image: fusiformImg },
-  { id: 'placeholder-fan', image: fanImg },
-  { id: 'placeholder-strap', image: strapImg },
+// Every image in src/assets/muscles, keyed by file name.
+const imageFiles = import.meta.glob('../assets/muscles/*.{png,jpg,jpeg,webp}', {
+  eager: true,
+  import: 'default',
+})
+const imageUrls = Object.fromEntries(
+  Object.entries(imageFiles).map(([path, url]) => [path.split('/').pop(), url]),
+)
+
+// One property per question in questions.js. A value can be a single answer or
+// a list of accepted answers; the first one is shown once the question is solved.
+// `image` is a file name in src/assets/muscles — muscles whose file doesn't
+// exist yet are skipped by the quiz.
+const muscleData = [
+  // Sheet-like
+  {
+    id: 'diaphragm',
+    image: 'Diaphragm.png',
+    latinName: 'diaphragma',
+    czechName: 'bránice',
+    shape: SHEET,
+  },
+  {
+    id: 'latissimus-dorsi',
+    image: 'LatissimusDorsi.png',
+    latinName: 'musculus latissimus dorsi',
+    czechName: ['nejširší sval zádový', 'sval nejširší zádový'],
+    shape: SHEET,
+  },
+  {
+    id: 'obliquus-externus-abdominis',
+    image: 'ObliquusExternusAbdominis.png',
+    latinName: ['musculus obliquus externus abdominis', 'musculus obliquus externus'],
+    czechName: ['zevní šikmý sval břišní', 'šikmý sval břišní zevní', 'sval šikmý břišní zevní'],
+    shape: SHEET,
+  },
+  {
+    id: 'obliquus-internus-abdominis',
+    image: 'ObliquusInternusAbdominis.png',
+    latinName: ['musculus obliquus internus abdominis', 'musculus obliquus internus'],
+    czechName: ['vnitřní šikmý sval břišní', 'šikmý sval břišní vnitřní', 'sval šikmý břišní vnitřní'],
+    shape: SHEET,
+  },
+  {
+    id: 'intercostales',
+    image: 'Intercostales.png',
+    latinName: 'musculi intercostales',
+    czechName: ['mezižeberní svaly', 'svaly mezižeberní'],
+    shape: SHEET,
+  },
+  {
+    id: 'transversus-abdominis',
+    image: 'TransversusAbdominis.png',
+    latinName: 'musculus transversus abdominis',
+    czechName: ['příčný sval břišní', 'sval příčný břišní'],
+    shape: SHEET,
+  },
+  {
+    id: 'trapezius',
+    image: 'Trapezius.png',
+    latinName: 'musculus trapezius',
+    czechName: ['trapézový sval', 'sval trapézový', 'kápový sval', 'sval kápový'],
+    shape: SHEET,
+  },
+
+  // Fingers-like
+  {
+    id: 'serratus-anterior',
+    image: 'SerratusAnterior.png',
+    latinName: 'musculus serratus anterior',
+    czechName: ['sval pilovitý přední', 'přední pilovitý sval', 'pilovitý sval přední', 'přední sval pilovitý'],
+    shape: FINGERS,
+  },
+  {
+    id: 'transversus-thoracis',
+    image: 'TransversusThoracis.png',
+    latinName: 'musculus transversus thoracis',
+    czechName: ['příčný sval hrudní', 'sval příčný hrudní'],
+    shape: FINGERS,
+  },
+  {
+    id: 'serratus-posterior-inferior',
+    image: 'SerratusPosteriorInferior.png',
+    latinName: 'musculus serratus posterior inferior',
+    czechName: ['dolní zadní pilovitý sval', 'sval pilovitý zadní dolní', 'zadní dolní pilovitý sval'],
+    shape: FINGERS,
+  },
+  {
+    id: 'serratus-posterior-superior',
+    image: 'SerratusPosteriorSuperior.png',
+    latinName: 'musculus serratus posterior superior',
+    czechName: ['horní zadní pilovitý sval', 'sval pilovitý zadní horní', 'zadní horní pilovitý sval'],
+    shape: FINGERS,
+  },
+
+  // Fan-like
+  {
+    id: 'deltoideus',
+    image: 'Deltoideus.png',
+    latinName: 'musculus deltoideus',
+    czechName: ['deltový sval', 'sval deltový'],
+    shape: FAN,
+  },
+  {
+    id: 'adductor-brevis',
+    image: 'AdductorBrevis.png',
+    latinName: 'musculus adductor brevis',
+    czechName: ['krátký přitahovač', 'přitahovač krátký', 'krátký přitahovač stehna'],
+    shape: FAN,
+  },
+  {
+    id: 'adductor-longus',
+    image: 'AdductorLongus.png',
+    latinName: 'musculus adductor longus',
+    czechName: ['dlouhý přitahovač', 'přitahovač dlouhý', 'dlouhý přitahovač stehna'],
+    shape: FAN,
+  },
+  {
+    id: 'gluteus-medius',
+    image: 'GluteusMedius.png',
+    latinName: 'musculus gluteus medius',
+    czechName: ['střední hýžďový sval', 'sval hýžďový střední'],
+    shape: FAN,
+  },
+  {
+    id: 'gluteus-minimus',
+    image: 'GluteusMinimus.png',
+    latinName: 'musculus gluteus minimus',
+    czechName: ['malý hýžďový sval', 'sval hýžďový malý'],
+    shape: FAN,
+  },
+  {
+    id: 'iliacus',
+    image: 'Iliacus.png',
+    latinName: 'musculus iliacus',
+    czechName: ['kyčelní sval', 'sval kyčelní'],
+    shape: FAN,
+  },
+  {
+    id: 'pectoralis-major',
+    image: 'PectoralisMajor.png',
+    latinName: 'musculus pectoralis major',
+    czechName: ['velký prsní sval', 'sval prsní velký'],
+    shape: FAN,
+  },
+  {
+    id: 'pectoralis-minor',
+    image: 'PectoralisMinor.png',
+    latinName: 'musculus pectoralis minor',
+    czechName: ['malý prsní sval', 'sval prsní malý'],
+    shape: FAN,
+  },
+
+  // Strap-like
+  {
+    id: 'longissimus-capitis',
+    image: 'LongissimusCapitis.png',
+    latinName: 'musculus longissimus capitis',
+    czechName: ['nejdelší sval hlavy', 'sval nejdelší hlavy'],
+    shape: STRAP,
+  },
+  {
+    id: 'longissimus-cervicis',
+    image: 'LongissimusCervicis.png',
+    latinName: 'musculus longissimus cervicis',
+    czechName: ['nejdelší sval krku', 'sval nejdelší krku'],
+    shape: STRAP,
+  },
+  {
+    id: 'longus-capitis',
+    image: 'LongusCapitis.png',
+    latinName: 'musculus longus capitis',
+    czechName: ['dlouhý sval hlavy', 'sval dlouhý hlavy'],
+    shape: STRAP,
+  },
+  {
+    id: 'longus-colli',
+    image: 'LongusColli.png',
+    latinName: 'musculus longus colli',
+    czechName: ['dlouhý sval krku', 'sval dlouhý krku'],
+    shape: STRAP,
+  },
+  {
+    id: 'splenius-capitis',
+    image: 'SpleniusCapitis.png',
+    latinName: 'musculus splenius capitis',
+    czechName: ['řemenový sval hlavy', 'sval řemenový hlavy'],
+    shape: STRAP,
+  },
+  {
+    id: 'splenius-cervicis',
+    image: 'SpleniusCervicis.png',
+    latinName: 'musculus splenius cervicis',
+    czechName: ['řemenový sval krku', 'sval řemenový krku'],
+    shape: STRAP,
+  },
+  {
+    id: 'sternocleidomastoideus',
+    image: 'Sternocleidomastoideus.png',
+    latinName: 'musculus sternocleidomastoideus',
+    czechName: ['zdvihač hlavy', 'kývač hlavy'],
+    shape: STRAP,
+  },
+  {
+    id: 'scalenus-anterior',
+    image: 'ScalenusAnterior.png',
+    latinName: 'musculus scalenus anterior',
+    czechName: ['přední kloněný sval', 'sval kloněný přední'],
+    shape: STRAP,
+  },
+  {
+    id: 'scalenus-medius',
+    image: 'ScalenusMedius.png',
+    latinName: 'musculus scalenus medius',
+    czechName: ['střední kloněný sval', 'sval kloněný střední'],
+    shape: STRAP,
+  },
+  {
+    id: 'scalenus-posterior',
+    image: 'ScalenusPosterior.png',
+    latinName: 'musculus scalenus posterior',
+    czechName: ['zadní kloněný sval', 'sval kloněný zadní'],
+    shape: STRAP,
+  },
+  {
+    id: 'rectus-capitis-anterior',
+    image: 'RectusCapitisAnterior.png',
+    latinName: 'musculus rectus capitis anterior',
+    czechName: ['přední přímý sval hlavy', 'sval přímý hlavy přední'],
+    shape: STRAP,
+  },
+  {
+    id: 'rectus-capitis-lateralis',
+    image: 'RectusCapitisLateralis.png',
+    latinName: 'musculus rectus capitis lateralis',
+    czechName: ['boční přímý sval hlavy', 'postranní přímý sval hlavy', 'sval přímý hlavy boční'],
+    shape: STRAP,
+  },
+  {
+    id: 'sartorius',
+    image: 'Sartorius.png',
+    latinName: 'musculus sartorius',
+    czechName: ['krejčovský sval', 'sval krejčovský'],
+    shape: STRAP,
+  },
+  {
+    id: 'semispinalis-capitis',
+    image: 'SemispinalisCapitis.png',
+    latinName: 'musculus semispinalis capitis',
+    czechName: ['poloostnový sval hlavy', 'sval poloostnový hlavy'],
+    shape: STRAP,
+  },
+  {
+    id: 'semispinalis-cervicis',
+    image: 'SemispinalisCervicis.png',
+    latinName: 'musculus semispinalis cervicis',
+    czechName: ['poloostnový sval krku', 'sval poloostnový krku'],
+    shape: STRAP,
+  },
+  {
+    id: 'gracilis',
+    image: 'Gracilis.png',
+    latinName: 'musculus gracilis',
+    czechName: ['štíhlý sval', 'sval štíhlý'],
+    shape: STRAP,
+  },
+  {
+    id: 'levator-scapulae',
+    image: 'LevatorScapulae.png',
+    latinName: 'musculus levator scapulae',
+    czechName: 'zdvihač lopatky',
+    shape: STRAP,
+  },
+  {
+    id: 'rectus-abdominis',
+    image: 'RectusAbdominis.png',
+    latinName: 'musculus rectus abdominis',
+    czechName: ['přímý sval břišní', 'sval přímý břišní'],
+    shape: STRAP,
+  },
+  {
+    id: 'semimembranosus',
+    image: 'Semimembranosus.png',
+    latinName: 'musculus semimembranosus',
+    czechName: ['poloblanitý sval', 'sval poloblanitý'],
+    shape: STRAP,
+  },
+
+  // Fusiform
+  {
+    id: 'psoas-major',
+    image: 'PsoasMajor.png',
+    latinName: 'musculus psoas major',
+    czechName: ['velký bederní sval', 'sval bederní velký'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'psoas-minor',
+    image: 'PsoasMinor.png',
+    latinName: 'musculus psoas minor',
+    czechName: ['malý bederní sval', 'sval bederní malý'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'biceps-femoris',
+    image: 'BicepsFemoris.png',
+    latinName: 'musculus biceps femoris',
+    czechName: ['dvojhlavý sval stehenní', 'sval dvojhlavý stehenní', 'dvouhlavý sval stehenní'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'semitendinosus',
+    image: 'Semitendinosus.png',
+    latinName: 'musculus semitendinosus',
+    czechName: ['pološlašitý sval', 'sval pološlašitý'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'subclavius',
+    image: 'Subclavius.png',
+    latinName: 'musculus subclavius',
+    czechName: ['podklíčkový sval', 'sval podklíčkový'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'rectus-femoris',
+    image: 'RectusFemoris.png',
+    latinName: 'musculus rectus femoris',
+    czechName: ['přímý sval stehenní', 'sval přímý stehenní'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'vastus-medialis',
+    image: 'VastusMedialis.png',
+    latinName: 'musculus vastus medialis',
+    czechName: ['vnitřní široký sval stehenní', 'vnitřní široký sval', 'sval široký vnitřní'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'vastus-lateralis',
+    image: 'VastusLateralis.png',
+    latinName: 'musculus vastus lateralis',
+    czechName: ['zevní široký sval stehenní', 'zevní široký sval', 'sval široký zevní'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'vastus-intermedius',
+    image: 'VastusIntermedius.png',
+    latinName: 'musculus vastus intermedius',
+    czechName: ['prostřední široký sval stehenní', 'prostřední široký sval', 'sval široký prostřední'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'tensor-fasciae-latae',
+    image: 'TensorFasciaeLatae.png',
+    latinName: 'musculus tensor fasciae latae',
+    czechName: ['napínač stehenní povázky', 'napínač povázky stehenní'],
+    shape: FUSIFORM,
+  },
+  {
+    id: 'teres-major',
+    image: 'TeresMajor.png',
+    latinName: 'musculus teres major',
+    czechName: ['velký oblý sval', 'sval oblý velký'],
+    shape: FUSIFORM,
+  },
+
+  // Quadrilateral
+  {
+    id: 'pectineus',
+    image: 'Pectineus.png',
+    latinName: 'musculus pectineus',
+    czechName: ['hřebenový sval', 'sval hřebenový'],
+    shape: QUADRILATERAL,
+  },
+  {
+    id: 'quadratus-lumborum',
+    image: 'QuadratusLumborum.png',
+    latinName: 'musculus quadratus lumborum',
+    czechName: ['čtyřhranný sval bederní', 'sval čtyřhranný bederní'],
+    shape: QUADRILATERAL,
+  },
+  {
+    id: 'gluteus-maximus',
+    image: 'GluteusMaximus.png',
+    latinName: 'musculus gluteus maximus',
+    czechName: ['velký hýžďový sval', 'sval hýžďový velký'],
+    shape: QUADRILATERAL,
+  },
+  {
+    id: 'adductor-magnus',
+    image: 'AdductorMagnus.png',
+    latinName: 'musculus adductor magnus',
+    czechName: ['velký přitahovač', 'přitahovač velký', 'velký přitahovač stehna'],
+    shape: QUADRILATERAL,
+  },
+  {
+    id: 'rhomboideus-major',
+    image: 'RhomboideusMajor.png',
+    latinName: 'musculus rhomboideus major',
+    czechName: ['velký rombický sval', 'sval rombický velký'],
+    shape: QUADRILATERAL,
+  },
+  {
+    id: 'rhomboideus-minor',
+    image: 'RhomboideusMinor.png',
+    latinName: 'musculus rhomboideus minor',
+    czechName: ['malý rombický sval', 'sval rombický malý'],
+    shape: QUADRILATERAL,
+  },
+
+  // Other (muscle groups)
+  {
+    id: 'pelvic-floor',
+    image: 'PelvicFloor.png',
+    latinName: 'diaphragma pelvis',
+    czechName: ['pánevní dno', 'pánevní bránice'],
+    shape: OTHER,
+  },
+  {
+    id: 'suboccipital-group',
+    image: 'SuboccipitalGroup.png',
+    latinName: 'musculi suboccipitales',
+    czechName: ['subokcipitální svaly', 'podhlavové svaly'],
+    shape: OTHER,
+  },
+  {
+    id: 'erector-spinae',
+    image: 'ErectorSpinae.png',
+    latinName: 'musculus erector spinae',
+    czechName: ['vzpřimovač páteře', 'vzpřimovače páteře'],
+    shape: OTHER,
+  },
+  {
+    id: 'deep-spinal-stabilizers',
+    image: 'DeepSpinalStabilizers.png',
+    latinName: 'musculi transversospinales',
+    czechName: ['hluboké stabilizátory páteře', 'příčně trnové svaly'],
+    shape: OTHER,
+  },
+  {
+    id: 'deep-external-hip-rotators',
+    image: 'DeepExternalHipRotators.png',
+    latinName: 'musculi pelvitrochanterici',
+    czechName: ['pelvitrochanterické svaly', 'hluboké zevní rotátory kyčle'],
+    shape: OTHER,
+  },
+  {
+    id: 'rotator-cuff',
+    image: 'RotatorCuff.png',
+    latinName: 'musculi rotatores humeri',
+    czechName: ['rotátorová manžeta', 'rotátorová manžeta ramene'],
+    shape: OTHER,
+  },
 ]
+
+export const muscles = muscleData.map((muscle) => ({
+  ...muscle,
+  image: imageUrls[muscle.image] ?? null,
+}))
