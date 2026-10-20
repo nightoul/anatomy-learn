@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" rx="24" fill="#f5f0ee"/>
+  <!-- Simple fusiform muscle silhouette: tendon, belly, tendon -->
+  <path d="M200 40 L200 100" stroke="#d6d3d1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M200 300 L200 360" stroke="#d6d3d1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M200 95 C 280 140, 280 260, 200 305 C 120 260, 120 140, 200 95 Z" fill="#c2410c" opacity="0.85"/>
+  <path d="M200 110 C 165 160, 165 240, 200 290 M200 110 C 235 160, 235 240, 200 290 M200 105 L200 295" stroke="#fed7aa" stroke-width="2" fill="none" opacity="0.6"/>
+  <text x="200" y="388" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#78716c">placeholder: fusiform</text>
+</svg>

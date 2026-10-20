@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" rx="24" fill="#f5f0ee"/>
+  <!-- Fan-shaped muscle: broad origin converging to a single tendon -->
+  <path d="M200 340 L200 370" stroke="#d6d3d1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M60 80 Q 200 40 340 80 L 215 340 L 185 340 Z" fill="#c2410c" opacity="0.85"/>
+  <path d="M90 75 L195 335 M145 62 L198 335 M200 58 L200 335 M255 62 L202 335 M310 75 L205 335" stroke="#fed7aa" stroke-width="2" opacity="0.6"/>
+  <text x="200" y="388" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#78716c">placeholder: fan</text>
+</svg>
