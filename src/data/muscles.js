@@ -21,6 +21,7 @@ const muscleData = [
     latinName: 'diaphragma',
     czechName: 'bránice',
     shape: SHEET,
+    region: 'core',
   },
   {
     id: 'latissimus-dorsi',
@@ -28,6 +29,7 @@ const muscleData = [
     latinName: 'musculus latissimus dorsi',
     czechName: ['široký sval zádový', 'sval široký zádový'],
     shape: SHEET,
+    region: 'shoulders',
   },
   {
     id: 'obliquus-externus-abdominis',
@@ -35,6 +37,7 @@ const muscleData = [
     latinName: ['musculus obliquus externus abdominis', 'musculus obliquus externus'],
     czechName: ['zevní šikmý sval břišní', 'šikmý sval břišní zevní', 'sval šikmý břišní zevní'],
     shape: SHEET,
+    region: 'core',
   },
   {
     id: 'obliquus-internus-abdominis',
@@ -42,6 +45,7 @@ const muscleData = [
     latinName: ['musculus obliquus internus abdominis', 'musculus obliquus internus'],
     czechName: ['vnitřní šikmý sval břišní', 'šikmý sval břišní vnitřní', 'sval šikmý břišní vnitřní'],
     shape: SHEET,
+    region: 'core',
   },
   {
     id: 'intercostales',
@@ -49,6 +53,7 @@ const muscleData = [
     latinName: 'musculi intercostales',
     czechName: ['mezižeberní svaly', 'svaly mezižeberní'],
     shape: SHEET,
+    region: 'chest wall',
   },
   {
     id: 'transversus-abdominis',
@@ -56,6 +61,7 @@ const muscleData = [
     latinName: 'musculus transversus abdominis',
     czechName: ['příčný sval břišní', 'sval příčný břišní'],
     shape: SHEET,
+    region: 'core',
   },
   {
     id: 'trapezius',
@@ -63,6 +69,7 @@ const muscleData = [
     latinName: 'musculus trapezius',
     czechName: ['kápový sval', 'sval kápový'],
     shape: SHEET,
+    region: 'shoulders',
   },
 
   // Fingers-like
@@ -72,6 +79,7 @@ const muscleData = [
     latinName: 'musculus serratus anterior',
     czechName: ['sval pilovitý přední', 'přední pilovitý sval', 'pilovitý sval přední', 'přední sval pilovitý'],
     shape: FINGERS,
+    region: 'shoulders',
   },
   {
     id: 'transversus-thoracis',
@@ -79,6 +87,7 @@ const muscleData = [
     latinName: 'musculus transversus thoracis',
     czechName: ['příčný sval hrudní', 'sval příčný hrudní'],
     shape: FINGERS,
+    region: 'chest wall',
   },
   {
     id: 'serratus-posterior-inferior',
@@ -86,6 +95,7 @@ const muscleData = [
     latinName: 'musculus serratus posterior inferior',
     czechName: ['dolní zadní pilovitý sval', 'sval pilovitý zadní dolní', 'zadní dolní pilovitý sval'],
     shape: FINGERS,
+    region: 'chest wall',
   },
   {
     id: 'serratus-posterior-superior',
@@ -93,6 +103,7 @@ const muscleData = [
     latinName: 'musculus serratus posterior superior',
     czechName: ['horní zadní pilovitý sval', 'sval pilovitý zadní horní', 'zadní horní pilovitý sval'],
     shape: FINGERS,
+    region: 'chest wall',
   },
 
   // Fan-like
@@ -102,6 +113,7 @@ const muscleData = [
     latinName: 'musculus deltoideus',
     czechName: ['deltový sval', 'sval deltový'],
     shape: FAN,
+    region: 'shoulders',
   },
   {
     id: 'adductor-brevis',
@@ -109,6 +121,7 @@ const muscleData = [
     latinName: 'musculus adductor brevis',
     czechName: ['krátký přitahovač', 'přitahovač krátký', 'krátký přitahovač stehna'],
     shape: FAN,
+    region: 'hips',
   },
   {
     id: 'adductor-longus',
@@ -116,6 +129,7 @@ const muscleData = [
     latinName: 'musculus adductor longus',
     czechName: ['dlouhý přitahovač', 'přitahovač dlouhý', 'dlouhý přitahovač stehna'],
     shape: FAN,
+    region: 'hips',
   },
   {
     id: 'gluteus-medius',
@@ -123,6 +137,7 @@ const muscleData = [
     latinName: 'musculus gluteus medius',
     czechName: ['střední hýžďový sval', 'sval hýžďový střední'],
     shape: FAN,
+    region: 'hips',
   },
   {
     id: 'gluteus-minimus',
@@ -130,6 +145,7 @@ const muscleData = [
     latinName: 'musculus gluteus minimus',
     czechName: ['malý hýžďový sval', 'sval hýžďový malý'],
     shape: FAN,
+    region: 'hips',
   },
   {
     id: 'iliacus',
@@ -137,6 +153,7 @@ const muscleData = [
     latinName: 'musculus iliacus',
     czechName: ['kyčelní sval', 'sval kyčelní'],
     shape: FAN,
+    region: 'hips',
   },
   {
     id: 'pectoralis-major',
@@ -144,6 +161,7 @@ const muscleData = [
     latinName: 'musculus pectoralis major',
     czechName: ['velký prsní sval', 'sval prsní velký'],
     shape: FAN,
+    region: 'shoulders',
   },
   {
     id: 'pectoralis-minor',
@@ -151,6 +169,7 @@ const muscleData = [
     latinName: 'musculus pectoralis minor',
     czechName: ['malý prsní sval', 'sval prsní malý'],
     shape: FAN,
+    region: 'shoulders',
   },
 
   // Strap-like
@@ -160,6 +179,7 @@ const muscleData = [
     latinName: 'musculus longissimus capitis',
     czechName: ['nejdelší sval hlavový', 'sval nejdelší hlavový'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'longissimus-cervicis',
@@ -167,6 +187,7 @@ const muscleData = [
     latinName: 'musculus longissimus cervicis',
     czechName: ['nejdelší sval krční', 'sval nejdelší krční'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'longus-capitis',
@@ -174,6 +195,7 @@ const muscleData = [
     latinName: 'musculus longus capitis',
     czechName: ['dlouhý sval hlavový', 'sval dlouhý hlavový'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'longus-colli',
@@ -181,6 +203,7 @@ const muscleData = [
     latinName: 'musculus longus colli',
     czechName: ['dlouhý sval krční', 'sval dlouhý krční'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'splenius-capitis',
@@ -188,6 +211,7 @@ const muscleData = [
     latinName: 'musculus splenius capitis',
     czechName: ['řemenový sval hlavový', 'sval řemenový hlavový'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'splenius-cervicis',
@@ -195,6 +219,7 @@ const muscleData = [
     latinName: 'musculus splenius cervicis',
     czechName: ['řemenový sval krční', 'sval řemenový krční'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'sternocleidomastoideus',
@@ -202,6 +227,7 @@ const muscleData = [
     latinName: 'musculus sternocleidomastoideus',
     czechName: ['zdvihač hlavy', 'kývač hlavy'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'scalenus-anterior',
@@ -209,6 +235,7 @@ const muscleData = [
     latinName: 'musculus scalenus anterior',
     czechName: ['přední kloněný sval', 'sval kloněný přední'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'scalenus-medius',
@@ -216,6 +243,7 @@ const muscleData = [
     latinName: 'musculus scalenus medius',
     czechName: ['střední kloněný sval', 'sval kloněný střední'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'scalenus-posterior',
@@ -223,6 +251,7 @@ const muscleData = [
     latinName: 'musculus scalenus posterior',
     czechName: ['zadní kloněný sval', 'sval kloněný zadní'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'rectus-capitis-anterior',
@@ -230,6 +259,7 @@ const muscleData = [
     latinName: 'musculus rectus capitis anterior',
     czechName: ['přední přímý sval hlavový', 'sval přímý hlavy hlavový'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'rectus-capitis-lateralis',
@@ -237,6 +267,7 @@ const muscleData = [
     latinName: 'musculus rectus capitis lateralis',
     czechName: ['boční přímý sval hlavový', 'přímý sval hlavový boční'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'sartorius',
@@ -244,6 +275,7 @@ const muscleData = [
     latinName: 'musculus sartorius',
     czechName: ['krejčovský sval', 'sval krejčovský'],
     shape: STRAP,
+    region: 'hips',
   },
   {
     id: 'semispinalis-capitis',
@@ -251,6 +283,7 @@ const muscleData = [
     latinName: 'musculus semispinalis capitis',
     czechName: ['poloostnový sval hlavový', 'sval poloostnový hlavový'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'semispinalis-cervicis',
@@ -258,6 +291,7 @@ const muscleData = [
     latinName: 'musculus semispinalis cervicis',
     czechName: ['poloostnový sval krční', 'sval poloostnový krční'],
     shape: STRAP,
+    region: 'neck',
   },
   {
     id: 'gracilis',
@@ -265,6 +299,7 @@ const muscleData = [
     latinName: 'musculus gracilis',
     czechName: ['štíhlý sval', 'sval štíhlý'],
     shape: STRAP,
+    region: 'hips',
   },
   {
     id: 'levator-scapulae',
@@ -272,6 +307,7 @@ const muscleData = [
     latinName: 'musculus levator scapulae',
     czechName: 'zdvihač lopatky',
     shape: STRAP,
+    region: 'shoulders',
   },
   {
     id: 'rectus-abdominis',
@@ -279,6 +315,7 @@ const muscleData = [
     latinName: 'musculus rectus abdominis',
     czechName: ['přímý sval břišní', 'sval přímý břišní'],
     shape: STRAP,
+    region: 'core',
   },
   {
     id: 'semimembranosus',
@@ -286,6 +323,7 @@ const muscleData = [
     latinName: 'musculus semimembranosus',
     czechName: ['poloblanitý sval', 'sval poloblanitý'],
     shape: STRAP,
+    region: 'legs',
   },
 
   // Fusiform
@@ -295,6 +333,7 @@ const muscleData = [
     latinName: 'musculus psoas major',
     czechName: ['velký bederní sval', 'sval bederní velký'],
     shape: FUSIFORM,
+    region: 'hips',
   },
   {
     id: 'psoas-minor',
@@ -302,6 +341,7 @@ const muscleData = [
     latinName: 'musculus psoas minor',
     czechName: ['malý bederní sval', 'sval bederní malý'],
     shape: FUSIFORM,
+    region: 'hips',
   },
   {
     id: 'biceps-femoris',
@@ -309,6 +349,7 @@ const muscleData = [
     latinName: 'musculus biceps femoris',
     czechName: ['dvojhlavý sval stehenní', 'sval dvojhlavý stehenní', 'dvouhlavý sval stehenní'],
     shape: FUSIFORM,
+    region: 'legs',
   },
   {
     id: 'semitendinosus',
@@ -316,6 +357,7 @@ const muscleData = [
     latinName: 'musculus semitendinosus',
     czechName: ['pološlašitý sval', 'sval pološlašitý'],
     shape: FUSIFORM,
+    region: 'legs',
   },
   {
     id: 'subclavius',
@@ -323,6 +365,7 @@ const muscleData = [
     latinName: 'musculus subclavius',
     czechName: ['podklíčkový sval', 'sval podklíčkový'],
     shape: FUSIFORM,
+    region: 'shoulders',
   },
   {
     id: 'rectus-femoris',
@@ -330,6 +373,7 @@ const muscleData = [
     latinName: 'musculus rectus femoris',
     czechName: ['přímý sval stehenní', 'sval přímý stehenní'],
     shape: FUSIFORM,
+    region: 'legs',
   },
   {
     id: 'vastus-medialis',
@@ -337,6 +381,7 @@ const muscleData = [
     latinName: 'musculus vastus medialis',
     czechName: ['vnitřní hlava čtyřhlavého svalu stehenního'],
     shape: FUSIFORM,
+    region: 'legs',
   },
   {
     id: 'vastus-lateralis',
@@ -344,6 +389,7 @@ const muscleData = [
     latinName: 'musculus vastus lateralis',
     czechName: ['boční hlava čtyřhlavého svalu stehenního'],
     shape: FUSIFORM,
+    region: 'legs',
   },
   {
     id: 'vastus-intermedius',
@@ -351,6 +397,7 @@ const muscleData = [
     latinName: 'musculus vastus intermedius',
     czechName: ['střední hlava čtyřhlavého svalu stehenního'],
     shape: FUSIFORM,
+    region: 'legs',
   },
   {
     id: 'tensor-fasciae-latae',
@@ -358,6 +405,7 @@ const muscleData = [
     latinName: 'musculus tensor fasciae latae',
     czechName: ['napínač stehenní povázky'],
     shape: FUSIFORM,
+    region: 'hips',
   },
   {
     id: 'teres-major',
@@ -365,6 +413,7 @@ const muscleData = [
     latinName: 'musculus teres major',
     czechName: ['velký oblý sval', 'sval oblý velký'],
     shape: FUSIFORM,
+    region: 'shoulders',
   },
 
   // Quadrilateral
@@ -374,6 +423,7 @@ const muscleData = [
     latinName: 'musculus pectineus',
     czechName: ['hřebenový sval', 'sval hřebenový'],
     shape: QUADRILATERAL,
+    region: 'hips',
   },
   {
     id: 'quadratus-lumborum',
@@ -381,6 +431,7 @@ const muscleData = [
     latinName: 'musculus quadratus lumborum',
     czechName: ['čtyřhranný sval bederní', 'sval čtyřhranný bederní'],
     shape: QUADRILATERAL,
+    region: 'spine',
   },
   {
     id: 'gluteus-maximus',
@@ -388,6 +439,7 @@ const muscleData = [
     latinName: 'musculus gluteus maximus',
     czechName: ['velký hýžďový sval', 'sval hýžďový velký'],
     shape: QUADRILATERAL,
+    region: 'hips',
   },
   {
     id: 'adductor-magnus',
@@ -395,6 +447,7 @@ const muscleData = [
     latinName: 'musculus adductor magnus',
     czechName: ['velký přitahovač', 'přitahovač velký', 'velký přitahovač stehna'],
     shape: QUADRILATERAL,
+    region: 'hips',
   },
   {
     id: 'rhomboideus-major',
@@ -402,6 +455,7 @@ const muscleData = [
     latinName: 'musculus rhomboideus major',
     czechName: ['velký rombický sval', 'sval rombický velký'],
     shape: QUADRILATERAL,
+    region: 'shoulders',
   },
   {
     id: 'rhomboideus-minor',
@@ -409,6 +463,7 @@ const muscleData = [
     latinName: 'musculus rhomboideus minor',
     czechName: ['malý rombický sval', 'sval rombický malý'],
     shape: QUADRILATERAL,
+    region: 'shoulders',
   },
 
   // Other (muscle groups)
@@ -418,6 +473,7 @@ const muscleData = [
     latinName: 'diaphragma pelvis',
     czechName: ['pánevní dno'],
     shape: OTHER,
+    region: 'core',
   },
   {
     id: 'suboccipital-group',
@@ -425,6 +481,7 @@ const muscleData = [
     latinName: 'musculi suboccipitales',
     czechName: ['subokcipitální svaly', 'podhlavové svaly'],
     shape: OTHER,
+    region: 'neck',
   },
   {
     id: 'erector-spinae',
@@ -432,6 +489,7 @@ const muscleData = [
     latinName: 'musculus erector spinae',
     czechName: ['vzpřimovače páteře'],
     shape: OTHER,
+    region: 'spine',
   },
   {
     id: 'deep-spinal-stabilizers',
@@ -439,6 +497,7 @@ const muscleData = [
     latinName: 'musculi transversospinales',
     czechName: ['hluboké stabilizátory páteře'],
     shape: OTHER,
+    region: 'spine',
   },
   {
     id: 'deep-external-hip-rotators',
@@ -446,6 +505,7 @@ const muscleData = [
     latinName: 'musculi pelvitrochanterici',
     czechName: ['hluboké zevní rotátory kyčle'],
     shape: OTHER,
+    region: 'hips',
   },
   {
     id: 'rotator-cuff',
@@ -453,6 +513,7 @@ const muscleData = [
     latinName: 'musculi rotatores humeri',
     czechName: ['rotátorová manžeta'],
     shape: OTHER,
+    region: 'shoulders',
   },
 ]
 
