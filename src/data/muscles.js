@@ -24,6 +24,7 @@ const muscleData = [
     region: 'core',
     depth: 'deep',
     palpable: 'no',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -35,6 +36,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -46,6 +48,7 @@ const muscleData = [
     region: 'core',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -57,6 +60,7 @@ const muscleData = [
     region: 'core',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -68,6 +72,7 @@ const muscleData = [
     region: 'chest wall',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -79,17 +84,43 @@ const muscleData = [
     region: 'core',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
-    id: 'trapezius',
-    image: 'Trapezius.png',
-    latinName: 'musculus trapezius',
-    czechName: ['kápový sval', 'sval kápový'],
+    id: 'trapezius-upper',
+    image: 'TrapeziusUpper.png',
+    latinName: ['musculus trapezius pars descendens', 'musculus trapezius pars superior'],
+    czechName: ['horní část kápového svalu', 'sestupná část kápového svalu', 'horní kápový sval'],
     shape: SHEET,
     region: 'shoulder girdle',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
+    exerciseGroup: '',
+  },
+  {
+    id: 'trapezius-middle',
+    image: 'TrapeziusMiddle.png',
+    latinName: ['musculus trapezius pars transversa', 'musculus trapezius pars media'],
+    czechName: ['střední část kápového svalu', 'příčná část kápového svalu', 'střední kápový sval'],
+    shape: SHEET,
+    region: 'shoulder girdle',
+    depth: 'superficial',
+    palpable: 'yes',
+    jandaType: 'phasic',
+    exerciseGroup: '',
+  },
+  {
+    id: 'trapezius-lower',
+    image: 'TrapeziusLower.png',
+    latinName: ['musculus trapezius pars ascendens', 'musculus trapezius pars inferior'],
+    czechName: ['dolní část kápového svalu', 'vzestupná část kápového svalu', 'dolní kápový sval'],
+    shape: SHEET,
+    region: 'shoulder girdle',
+    depth: 'superficial',
+    palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
 
@@ -103,6 +134,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -114,6 +146,7 @@ const muscleData = [
     region: 'chest wall',
     depth: 'deep',
     palpable: 'no',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -125,6 +158,7 @@ const muscleData = [
     region: 'chest wall',
     depth: 'intermediate',
     palpable: 'no',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -136,6 +170,7 @@ const muscleData = [
     region: 'chest wall',
     depth: 'intermediate',
     palpable: 'no',
+    jandaType: '',
     exerciseGroup: '',
   },
 
@@ -149,6 +184,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -160,6 +196,7 @@ const muscleData = [
     region: 'hips',
     depth: 'intermediate',
     palpable: 'no',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -171,6 +208,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -182,6 +220,7 @@ const muscleData = [
     region: 'hips',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -193,6 +232,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -204,6 +244,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -215,6 +256,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -226,6 +268,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
 
@@ -239,6 +282,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -250,6 +294,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -261,6 +306,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -272,6 +318,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -283,6 +330,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -294,6 +342,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'no',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -305,6 +354,7 @@ const muscleData = [
     region: 'neck',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -316,6 +366,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -327,6 +378,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -338,6 +390,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -349,6 +402,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -360,6 +414,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -371,6 +426,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -382,6 +438,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -393,6 +450,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -404,6 +462,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -415,6 +474,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -426,6 +486,7 @@ const muscleData = [
     region: 'core',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -437,6 +498,7 @@ const muscleData = [
     region: 'legs',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
 
@@ -450,6 +512,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -461,6 +524,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -472,6 +536,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -483,6 +548,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -494,6 +560,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'deep',
     palpable: 'no',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -505,6 +572,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -516,6 +584,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -527,6 +596,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -538,6 +608,7 @@ const muscleData = [
     region: 'legs',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -549,6 +620,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -560,6 +632,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: '',
     exerciseGroup: '',
   },
 
@@ -573,6 +646,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -584,6 +658,7 @@ const muscleData = [
     region: 'core',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -595,6 +670,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -606,6 +682,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -617,6 +694,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -628,6 +706,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
 
@@ -641,6 +720,7 @@ const muscleData = [
     region: 'core',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -652,6 +732,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -663,6 +744,7 @@ const muscleData = [
     region: 'spine',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
   {
@@ -674,6 +756,7 @@ const muscleData = [
     region: 'spine',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -685,6 +768,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
 
@@ -698,6 +782,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'deep',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -709,6 +794,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -720,6 +806,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'intermediate',
     palpable: 'yes',
+    jandaType: 'phasic',
     exerciseGroup: '',
   },
   {
@@ -731,6 +818,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'deep',
     palpable: 'no',
+    jandaType: 'tonic',
     exerciseGroup: '',
   },
 ]
