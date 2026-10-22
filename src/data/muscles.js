@@ -22,6 +22,8 @@ const muscleData = [
     czechName: 'bránice',
     shape: SHEET,
     region: 'core',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -31,6 +33,8 @@ const muscleData = [
     czechName: ['široký sval zádový', 'sval široký zádový'],
     shape: SHEET,
     region: 'shoulder joint',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -40,6 +44,8 @@ const muscleData = [
     czechName: ['zevní šikmý sval břišní', 'šikmý sval břišní zevní', 'sval šikmý břišní zevní'],
     shape: SHEET,
     region: 'core',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -49,6 +55,8 @@ const muscleData = [
     czechName: ['vnitřní šikmý sval břišní', 'šikmý sval břišní vnitřní', 'sval šikmý břišní vnitřní'],
     shape: SHEET,
     region: 'core',
+    depth: 'intermediate',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -58,6 +66,8 @@ const muscleData = [
     czechName: ['mezižeberní svaly', 'svaly mezižeberní'],
     shape: SHEET,
     region: 'chest wall',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -67,6 +77,8 @@ const muscleData = [
     czechName: ['příčný sval břišní', 'sval příčný břišní'],
     shape: SHEET,
     region: 'core',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -76,6 +88,8 @@ const muscleData = [
     czechName: ['kápový sval', 'sval kápový'],
     shape: SHEET,
     region: 'shoulder girdle',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
 
@@ -87,6 +101,8 @@ const muscleData = [
     czechName: ['sval pilovitý přední', 'přední pilovitý sval', 'pilovitý sval přední', 'přední sval pilovitý'],
     shape: FINGERS,
     region: 'shoulder girdle',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -96,6 +112,8 @@ const muscleData = [
     czechName: ['příčný sval hrudní', 'sval příčný hrudní'],
     shape: FINGERS,
     region: 'chest wall',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -105,6 +123,8 @@ const muscleData = [
     czechName: ['dolní zadní pilovitý sval', 'sval pilovitý zadní dolní', 'zadní dolní pilovitý sval'],
     shape: FINGERS,
     region: 'chest wall',
+    depth: 'intermediate',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -114,6 +134,8 @@ const muscleData = [
     czechName: ['horní zadní pilovitý sval', 'sval pilovitý zadní horní', 'zadní horní pilovitý sval'],
     shape: FINGERS,
     region: 'chest wall',
+    depth: 'intermediate',
+    palpable: 'no',
     exerciseGroup: '',
   },
 
@@ -125,6 +147,8 @@ const muscleData = [
     czechName: ['deltový sval', 'sval deltový'],
     shape: FAN,
     region: 'shoulder joint',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -134,6 +158,8 @@ const muscleData = [
     czechName: ['krátký přitahovač', 'přitahovač krátký', 'krátký přitahovač stehna'],
     shape: FAN,
     region: 'hips',
+    depth: 'intermediate',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -143,6 +169,8 @@ const muscleData = [
     czechName: ['dlouhý přitahovač', 'přitahovač dlouhý', 'dlouhý přitahovač stehna'],
     shape: FAN,
     region: 'hips',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -152,6 +180,8 @@ const muscleData = [
     czechName: ['střední hýžďový sval', 'sval hýžďový střední'],
     shape: FAN,
     region: 'hips',
+    depth: 'intermediate',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -161,6 +191,8 @@ const muscleData = [
     czechName: ['malý hýžďový sval', 'sval hýžďový malý'],
     shape: FAN,
     region: 'hips',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -170,6 +202,8 @@ const muscleData = [
     czechName: ['kyčelní sval', 'sval kyčelní'],
     shape: FAN,
     region: 'hips',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -179,6 +213,8 @@ const muscleData = [
     czechName: ['velký prsní sval', 'sval prsní velký'],
     shape: FAN,
     region: 'shoulder joint',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -188,6 +224,8 @@ const muscleData = [
     czechName: ['malý prsní sval', 'sval prsní malý'],
     shape: FAN,
     region: 'shoulder girdle',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
 
@@ -199,6 +237,8 @@ const muscleData = [
     czechName: ['nejdelší sval hlavový', 'sval nejdelší hlavový'],
     shape: STRAP,
     region: 'neck',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -208,6 +248,8 @@ const muscleData = [
     czechName: ['nejdelší sval krční', 'sval nejdelší krční'],
     shape: STRAP,
     region: 'neck',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -217,6 +259,8 @@ const muscleData = [
     czechName: ['dlouhý sval hlavový', 'sval dlouhý hlavový'],
     shape: STRAP,
     region: 'neck',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -226,6 +270,8 @@ const muscleData = [
     czechName: ['dlouhý sval krční', 'sval dlouhý krční'],
     shape: STRAP,
     region: 'neck',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -235,6 +281,8 @@ const muscleData = [
     czechName: ['řemenový sval hlavový', 'sval řemenový hlavový'],
     shape: STRAP,
     region: 'neck',
+    depth: 'intermediate',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -244,6 +292,8 @@ const muscleData = [
     czechName: ['řemenový sval krční', 'sval řemenový krční'],
     shape: STRAP,
     region: 'neck',
+    depth: 'intermediate',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -253,6 +303,8 @@ const muscleData = [
     czechName: ['zdvihač hlavy', 'kývač hlavy'],
     shape: STRAP,
     region: 'neck',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -262,6 +314,8 @@ const muscleData = [
     czechName: ['přední kloněný sval', 'sval kloněný přední'],
     shape: STRAP,
     region: 'neck',
+    depth: 'intermediate',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -271,6 +325,8 @@ const muscleData = [
     czechName: ['střední kloněný sval', 'sval kloněný střední'],
     shape: STRAP,
     region: 'neck',
+    depth: 'intermediate',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -280,6 +336,8 @@ const muscleData = [
     czechName: ['zadní kloněný sval', 'sval kloněný zadní'],
     shape: STRAP,
     region: 'neck',
+    depth: 'intermediate',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -289,6 +347,8 @@ const muscleData = [
     czechName: ['přední přímý sval hlavový', 'sval přímý hlavy hlavový'],
     shape: STRAP,
     region: 'neck',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -298,6 +358,8 @@ const muscleData = [
     czechName: ['boční přímý sval hlavový', 'přímý sval hlavový boční'],
     shape: STRAP,
     region: 'neck',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -307,6 +369,8 @@ const muscleData = [
     czechName: ['krejčovský sval', 'sval krejčovský'],
     shape: STRAP,
     region: 'hips',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -316,6 +380,8 @@ const muscleData = [
     czechName: ['poloostnový sval hlavový', 'sval poloostnový hlavový'],
     shape: STRAP,
     region: 'neck',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -325,6 +391,8 @@ const muscleData = [
     czechName: ['poloostnový sval krční', 'sval poloostnový krční'],
     shape: STRAP,
     region: 'neck',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -334,6 +402,8 @@ const muscleData = [
     czechName: ['štíhlý sval', 'sval štíhlý'],
     shape: STRAP,
     region: 'hips',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -343,6 +413,8 @@ const muscleData = [
     czechName: 'zdvihač lopatky',
     shape: STRAP,
     region: 'shoulder girdle',
+    depth: 'intermediate',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -352,6 +424,8 @@ const muscleData = [
     czechName: ['přímý sval břišní', 'sval přímý břišní'],
     shape: STRAP,
     region: 'core',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -361,6 +435,8 @@ const muscleData = [
     czechName: ['poloblanitý sval', 'sval poloblanitý'],
     shape: STRAP,
     region: 'legs',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
 
@@ -372,6 +448,8 @@ const muscleData = [
     czechName: ['velký bederní sval', 'sval bederní velký'],
     shape: FUSIFORM,
     region: 'hips',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -381,6 +459,8 @@ const muscleData = [
     czechName: ['malý bederní sval', 'sval bederní malý'],
     shape: FUSIFORM,
     region: 'hips',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -390,6 +470,8 @@ const muscleData = [
     czechName: ['dvojhlavý sval stehenní', 'sval dvojhlavý stehenní', 'dvouhlavý sval stehenní'],
     shape: FUSIFORM,
     region: 'legs',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -399,6 +481,8 @@ const muscleData = [
     czechName: ['pološlašitý sval', 'sval pološlašitý'],
     shape: FUSIFORM,
     region: 'legs',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -408,6 +492,8 @@ const muscleData = [
     czechName: ['podklíčkový sval', 'sval podklíčkový'],
     shape: FUSIFORM,
     region: 'shoulder girdle',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -417,6 +503,8 @@ const muscleData = [
     czechName: ['přímý sval stehenní', 'sval přímý stehenní'],
     shape: FUSIFORM,
     region: 'legs',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -426,6 +514,8 @@ const muscleData = [
     czechName: ['vnitřní hlava čtyřhlavého svalu stehenního'],
     shape: FUSIFORM,
     region: 'legs',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -435,6 +525,8 @@ const muscleData = [
     czechName: ['boční hlava čtyřhlavého svalu stehenního'],
     shape: FUSIFORM,
     region: 'legs',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -444,6 +536,8 @@ const muscleData = [
     czechName: ['střední hlava čtyřhlavého svalu stehenního'],
     shape: FUSIFORM,
     region: 'legs',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
   {
@@ -453,6 +547,8 @@ const muscleData = [
     czechName: ['napínač stehenní povázky'],
     shape: FUSIFORM,
     region: 'hips',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -462,6 +558,8 @@ const muscleData = [
     czechName: ['velký oblý sval', 'sval oblý velký'],
     shape: FUSIFORM,
     region: 'shoulder joint',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
 
@@ -473,6 +571,8 @@ const muscleData = [
     czechName: ['hřebenový sval', 'sval hřebenový'],
     shape: QUADRILATERAL,
     region: 'hips',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -482,6 +582,8 @@ const muscleData = [
     czechName: ['čtyřhranný sval bederní', 'sval čtyřhranný bederní'],
     shape: QUADRILATERAL,
     region: 'core',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -491,6 +593,8 @@ const muscleData = [
     czechName: ['velký hýžďový sval', 'sval hýžďový velký'],
     shape: QUADRILATERAL,
     region: 'hips',
+    depth: 'superficial',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -500,6 +604,8 @@ const muscleData = [
     czechName: ['velký přitahovač', 'přitahovač velký', 'velký přitahovač stehna'],
     shape: QUADRILATERAL,
     region: 'hips',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -509,6 +615,8 @@ const muscleData = [
     czechName: ['velký rombický sval', 'sval rombický velký'],
     shape: QUADRILATERAL,
     region: 'shoulder girdle',
+    depth: 'intermediate',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -518,6 +626,8 @@ const muscleData = [
     czechName: ['malý rombický sval', 'sval rombický malý'],
     shape: QUADRILATERAL,
     region: 'shoulder girdle',
+    depth: 'intermediate',
+    palpable: 'yes',
     exerciseGroup: '',
   },
 
@@ -529,6 +639,8 @@ const muscleData = [
     czechName: ['pánevní dno'],
     shape: OTHER,
     region: 'core',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -538,6 +650,8 @@ const muscleData = [
     czechName: ['subokcipitální svaly', 'podhlavové svaly'],
     shape: OTHER,
     region: 'neck',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -547,6 +661,8 @@ const muscleData = [
     czechName: ['vzpřimovače páteře'],
     shape: OTHER,
     region: 'spine',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -556,6 +672,8 @@ const muscleData = [
     czechName: ['hluboké stabilizátory páteře'],
     shape: OTHER,
     region: 'spine',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
@@ -565,15 +683,54 @@ const muscleData = [
     czechName: ['hluboké zevní rotátory kyčle'],
     shape: OTHER,
     region: 'hips',
+    depth: 'deep',
+    palpable: 'yes',
+    exerciseGroup: '',
+  },
+
+  // Rotator cuff
+  {
+    id: 'supraspinatus',
+    image: 'Supraspinatus.png',
+    latinName: 'musculus supraspinatus',
+    czechName: ['nadhřebenový sval', 'sval nadhřebenový'],
+    shape: '',
+    region: 'shoulder joint',
+    depth: 'deep',
+    palpable: 'yes',
     exerciseGroup: '',
   },
   {
-    id: 'rotator-cuff',
-    image: 'RotatorCuff.png',
-    latinName: 'musculi rotatores humeri',
-    czechName: ['rotátorová manžeta'],
-    shape: OTHER,
+    id: 'infraspinatus',
+    image: 'Infraspinatus.png',
+    latinName: 'musculus infraspinatus',
+    czechName: ['podhřebenový sval', 'sval podhřebenový'],
+    shape: '',
     region: 'shoulder joint',
+    depth: 'intermediate',
+    palpable: 'yes',
+    exerciseGroup: '',
+  },
+  {
+    id: 'teres-minor',
+    image: 'TeresMinor.png',
+    latinName: 'musculus teres minor',
+    czechName: ['malý oblý sval', 'sval oblý malý'],
+    shape: '',
+    region: 'shoulder joint',
+    depth: 'intermediate',
+    palpable: 'yes',
+    exerciseGroup: '',
+  },
+  {
+    id: 'subscapularis',
+    image: 'Subscapularis.png',
+    latinName: 'musculus subscapularis',
+    czechName: ['podlopatkový sval', 'sval podlopatkový'],
+    shape: '',
+    region: 'shoulder joint',
+    depth: 'deep',
+    palpable: 'no',
     exerciseGroup: '',
   },
 ]
