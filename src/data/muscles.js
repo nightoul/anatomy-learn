@@ -36,7 +36,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -48,7 +48,7 @@ const muscleData = [
     region: 'core',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -60,7 +60,7 @@ const muscleData = [
     region: 'core',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -84,7 +84,7 @@ const muscleData = [
     region: 'core',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -96,7 +96,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -108,7 +108,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -120,7 +120,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
 
@@ -134,7 +134,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -184,7 +184,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -196,7 +196,7 @@ const muscleData = [
     region: 'hips',
     depth: 'intermediate',
     palpable: 'no',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -208,7 +208,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -220,7 +220,7 @@ const muscleData = [
     region: 'hips',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -232,7 +232,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -244,7 +244,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -256,7 +256,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -268,35 +268,11 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
 
   // Strap-like
-  {
-    id: 'longissimus-capitis',
-    image: 'LongissimusCapitis.png',
-    latinName: 'musculus longissimus capitis',
-    czechName: ['nejdelší sval hlavový', 'sval nejdelší hlavový'],
-    shape: STRAP,
-    region: 'neck',
-    depth: 'deep',
-    palpable: 'no',
-    jandaType: 'tonic',
-    exerciseGroup: '',
-  },
-  {
-    id: 'longissimus-cervicis',
-    image: 'LongissimusCervicis.png',
-    latinName: 'musculus longissimus cervicis',
-    czechName: ['nejdelší sval krční', 'sval nejdelší krční'],
-    shape: STRAP,
-    region: 'neck',
-    depth: 'deep',
-    palpable: 'no',
-    jandaType: 'tonic',
-    exerciseGroup: '',
-  },
   {
     id: 'longus-capitis',
     image: 'LongusCapitis.png',
@@ -306,7 +282,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -318,7 +294,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -330,7 +306,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -342,7 +318,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'no',
-    jandaType: 'tonic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -354,7 +330,7 @@ const muscleData = [
     region: 'neck',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -366,7 +342,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -378,7 +354,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -390,7 +366,7 @@ const muscleData = [
     region: 'neck',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -402,7 +378,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -414,7 +390,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -438,7 +414,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -450,7 +426,7 @@ const muscleData = [
     region: 'neck',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'tonic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -462,7 +438,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -474,7 +450,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -486,7 +462,7 @@ const muscleData = [
     region: 'core',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -498,7 +474,7 @@ const muscleData = [
     region: 'legs',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
 
@@ -512,7 +488,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -524,7 +500,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'tonic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -536,7 +512,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -548,7 +524,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -572,7 +548,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -584,7 +560,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -596,7 +572,7 @@ const muscleData = [
     region: 'legs',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -608,7 +584,7 @@ const muscleData = [
     region: 'legs',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -620,7 +596,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -646,7 +622,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -658,7 +634,7 @@ const muscleData = [
     region: 'core',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -670,7 +646,7 @@ const muscleData = [
     region: 'hips',
     depth: 'superficial',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -682,7 +658,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -694,7 +670,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
   {
@@ -706,7 +682,7 @@ const muscleData = [
     region: 'shoulder girdle',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: 'weakness-prone',
     exerciseGroup: '',
   },
 
@@ -720,31 +696,55 @@ const muscleData = [
     region: 'core',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
     id: 'suboccipital-group',
     image: 'SuboccipitalGroup.png',
     latinName: 'musculi suboccipitales',
-    czechName: ['subokcipitální svaly', 'podhlavové svaly'],
+    czechName: ['hluboké šíjové svaly'],
     shape: OTHER,
     region: 'neck',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
-    id: 'erector-spinae',
-    image: 'ErectorSpinae.png',
-    latinName: 'musculus erector spinae',
-    czechName: ['vzpřimovače páteře'],
+    id: 'erector-spinae-lumbar',
+    image: 'ErectorSpinaeLumbar.png',
+    latinName: ['musculus erector spinae pars lumbalis', 'erector spinae lumbalis'],
+    czechName: ['bederní vzpřimovače', 'bederní vzpřimovače páteře', 'bederní vzpřimovač páteře'],
     shape: OTHER,
     region: 'spine',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
+    exerciseGroup: '',
+  },
+  {
+    id: 'erector-spinae-thoracic',
+    image: 'ErectorSpinaeThoracic.png',
+    latinName: ['musculus erector spinae pars thoracica', 'erector spinae thoracica'],
+    czechName: ['hrudní vzpřimovače', 'hrudní vzpřimovače páteře', 'hrudní vzpřimovač páteře'],
+    shape: OTHER,
+    region: 'spine',
+    depth: 'deep',
+    palpable: 'yes',
+    jandaType: '',
+    exerciseGroup: '',
+  },
+  {
+    id: 'erector-spinae-cervical',
+    image: 'ErectorSpinaeCervical.png',
+    latinName: ['musculus erector spinae pars cervicalis', 'erector spinae cervicalis'],
+    czechName: ['krční vzpřimovače', 'krční vzpřimovače páteře', 'krční vzpřimovač páteře'],
+    shape: OTHER,
+    region: 'neck',
+    depth: 'deep',
+    palpable: 'no',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
   {
@@ -756,7 +756,7 @@ const muscleData = [
     region: 'spine',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -768,7 +768,7 @@ const muscleData = [
     region: 'hips',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'tonic',
+    jandaType: 'tightness-prone',
     exerciseGroup: '',
   },
 
@@ -782,7 +782,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'deep',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -794,7 +794,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -806,7 +806,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'intermediate',
     palpable: 'yes',
-    jandaType: 'phasic',
+    jandaType: '',
     exerciseGroup: '',
   },
   {
@@ -818,7 +818,7 @@ const muscleData = [
     region: 'shoulder joint',
     depth: 'deep',
     palpable: 'no',
-    jandaType: 'tonic',
+    jandaType: '',
     exerciseGroup: '',
   },
 ]

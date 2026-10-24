@@ -128,7 +128,7 @@ const movementData = [
     czechName: ['flexe trupu'],
     agonists: ['rectus-abdominis'],
     synergists: ['obliquus-externus-abdominis', 'obliquus-internus-abdominis'],
-    antagonists: ['erector-spinae', 'deep-spinal-stabilizers'],
+    antagonists: ['erector-spinae-lumbar', 'erector-spinae-thoracic', 'deep-spinal-stabilizers'],
     stabilizers: ['transversus-abdominis'],
   },
 
@@ -149,7 +149,7 @@ const movementData = [
     name: 'neck extension',
     czechName: ['extenze krku', 'extenze krční páteře'],
     agonists: ['splenius-capitis', 'splenius-cervicis', 'semispinalis-capitis', 'semispinalis-cervicis'],
-    synergists: ['trapezius-upper', 'levator-scapulae', 'longissimus-capitis', 'longissimus-cervicis', 'suboccipital-group'],
+    synergists: ['trapezius-upper', 'levator-scapulae', 'erector-spinae-cervical', 'suboccipital-group'],
     antagonists: ['sternocleidomastoideus', 'longus-colli', 'longus-capitis'],
     stabilizers: [],
   },
