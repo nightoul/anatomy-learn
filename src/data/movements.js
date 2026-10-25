@@ -31,7 +31,7 @@ const movementData = [
     agonists: ['gluteus-maximus'],
     synergists: ['biceps-femoris', 'semitendinosus', 'semimembranosus', 'adductor-magnus'],
     antagonists: ['iliacus', 'psoas-major', 'rectus-femoris'],
-    stabilizers: ['transversus-abdominis', 'deep-spinal-stabilizers'],
+    stabilizers: ['transversus-abdominis', 'deep-spinal-stabilizers-lumbar'],
   },
   {
     id: 'hip-abduction',
@@ -128,7 +128,7 @@ const movementData = [
     czechName: ['flexe trupu'],
     agonists: ['rectus-abdominis'],
     synergists: ['obliquus-externus-abdominis', 'obliquus-internus-abdominis'],
-    antagonists: ['erector-spinae-lumbar', 'erector-spinae-thoracic', 'deep-spinal-stabilizers'],
+    antagonists: ['erector-spinae-lumbar', 'erector-spinae-thoracic', 'deep-spinal-stabilizers-lumbar', 'deep-spinal-stabilizers-thoracic'],
     stabilizers: ['transversus-abdominis'],
   },
 
@@ -140,7 +140,7 @@ const movementData = [
     czechName: ['flexe krku', 'flexe krční páteře'],
     agonists: ['sternocleidomastoideus', 'longus-colli', 'longus-capitis'],
     synergists: ['scalenus-anterior', 'rectus-capitis-anterior'],
-    antagonists: ['splenius-capitis', 'splenius-cervicis', 'semispinalis-capitis', 'semispinalis-cervicis', 'trapezius-upper', 'suboccipital-group'],
+    antagonists: ['splenius-capitis', 'splenius-cervicis', 'semispinalis-capitis', 'deep-spinal-stabilizers-cervical', 'trapezius-upper', 'suboccipital-group'],
     stabilizers: [],
   },
   {
@@ -148,7 +148,7 @@ const movementData = [
     image: 'NeckExtension.png',
     name: 'neck extension',
     czechName: ['extenze krku', 'extenze krční páteře'],
-    agonists: ['splenius-capitis', 'splenius-cervicis', 'semispinalis-capitis', 'semispinalis-cervicis'],
+    agonists: ['splenius-capitis', 'splenius-cervicis', 'semispinalis-capitis', 'deep-spinal-stabilizers-cervical'],
     synergists: ['trapezius-upper', 'levator-scapulae', 'erector-spinae-cervical', 'suboccipital-group'],
     antagonists: ['sternocleidomastoideus', 'longus-colli', 'longus-capitis'],
     stabilizers: [],
