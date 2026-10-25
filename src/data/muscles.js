@@ -1,4 +1,4 @@
-import { FAN, FLAT, QUADRILATERAL, RIBBON, ROPE, SMALL, SPINDLE, TRIANGULAR } from './shapes.js'
+import { FLAT, QUADRILATERAL, RIBBON, ROPE, SMALL, SPINDLE, TRIANGULAR } from './shapes.js'
 
 // Every image in src/assets/muscles, keyed by file name.
 const imageFiles = import.meta.glob('../assets/muscles/*.{png,jpg,jpeg,webp}', {
@@ -340,7 +340,7 @@ const muscleData = [
     image: 'PectoralisMajor.png',
     latinName: 'musculus pectoralis major',
     czechName: ['velký prsní sval', 'sval prsní velký'],
-    shape: FAN,
+    shape: TRIANGULAR,
     region: 'shoulder joint',
     depth: 'superficial',
     palpable: 'yes',
@@ -608,7 +608,7 @@ const muscleData = [
     image: 'GluteusMedius.png',
     latinName: 'musculus gluteus medius',
     czechName: ['střední hýžďový sval', 'sval hýžďový střední'],
-    shape: FAN,
+    shape: TRIANGULAR,
     region: 'hips',
     depth: 'intermediate',
     palpable: 'yes',
@@ -620,7 +620,7 @@ const muscleData = [
     image: 'GluteusMinimus.png',
     latinName: 'musculus gluteus minimus',
     czechName: ['malý hýžďový sval', 'sval hýžďový malý'],
-    shape: FAN,
+    shape: TRIANGULAR,
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
@@ -632,7 +632,7 @@ const muscleData = [
     image: 'Iliacus.png',
     latinName: 'musculus iliacus',
     czechName: ['kyčelní sval', 'sval kyčelní'],
-    shape: FAN,
+    shape: TRIANGULAR,
     region: 'hips',
     depth: 'deep',
     palpable: 'no',
