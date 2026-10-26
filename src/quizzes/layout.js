@@ -13,10 +13,11 @@ export function randomLayout(questions) {
     return {
       question,
       side: i % 2 === 0 ? 'left' : 'right',
-      // One question per row band per side, jittered inside its band so the
-      // questions never overlap.
+      // One question per row band per side, placed randomly in the upper 70 % of
+      // its band, so the questions spread over the whole column while leaving
+      // room for a chip's height before the next band.
       x: Math.random(),
-      y: rows === 1 ? 0.2 + Math.random() * 0.6 : (row + 0.15 + Math.random() * 0.7) / rows,
+      y: rows === 1 ? Math.random() : (row + Math.random() * 0.7) / rows,
     }
   })
 }

@@ -1,12 +1,9 @@
+import { byFileName, reportDataError } from './dataHelpers.js'
 import { muscles } from './muscles.js'
 
 // Every image in src/assets/movements, keyed by file name.
-const imageFiles = import.meta.glob('../assets/movements/*.{png,jpg,jpeg,webp}', {
-  eager: true,
-  import: 'default',
-})
-const imageUrls = Object.fromEntries(
-  Object.entries(imageFiles).map(([path, url]) => [path.split('/').pop(), url]),
+const imageUrls = byFileName(
+  import.meta.glob('../assets/movements/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' }),
 )
 
 // Muscles are referenced by their id in muscles.js. A role can be an empty list
@@ -162,7 +159,7 @@ const muscleIds = new Set(muscles.map((m) => m.id))
 for (const movement of movementData) {
   for (const role of ROLES) {
     for (const id of movement[role]) {
-      if (!muscleIds.has(id)) throw new Error(`movements.js: unknown muscle "${id}" in ${movement.id}.${role}`)
+      if (!muscleIds.has(id)) reportDataError(`movements.js: unknown muscle "${id}" in ${movement.id}.${role}`)
     }
   }
 }

@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { muscles } from '../data/muscles.js'
-import { questions } from '../data/questions.js'
+import { answerFor, questionsFor } from '../data/questions.js'
 import { randomLayout } from './layout.js'
 import QuestionChip from './QuestionChip.jsx'
 
-// Only muscles with an image and an answer to every question are quizzed.
-const quizMuscles = muscles.filter((m) => m.image && questions.every((q) => m[q.key]))
+// Only muscles with an image are quizzed; each gets the questions it has answers for.
+const quizMuscles = muscles.filter((m) => m.image && questionsFor(m).length > 0)
 
 // Results screen by score: over 90 % / 60–90 % / under 60 %.
 function resultFor(correct, total) {
@@ -44,14 +44,14 @@ function MuscleQuiz() {
   const [correctCount, setCorrectCount] = useState(0)
 
   const muscle = quizMuscles[index]
-  const allSolved = questions.every((q) => solved[q.key])
+  const allSolved = Boolean(muscle) && questionsFor(muscle).every((q) => solved[q.key])
   const isLast = index === quizMuscles.length - 1
   const result = resultFor(correctCount, quizMuscles.length)
 
   function load(i) {
     setIndex(i)
     setRound((r) => r + 1)
-    setLayout(randomLayout(questions))
+    setLayout(randomLayout(questionsFor(quizMuscles[i])))
     setSolved({})
     setOpenKey(null)
     setFinished(false)
@@ -97,7 +97,7 @@ function MuscleQuiz() {
         <QuestionChip
           key={`${round}-${question.key}`}
           question={question}
-          value={muscle[question.key]}
+          value={answerFor(muscle, question)}
           solved={Boolean(solved[question.key])}
           open={openKey === question.key}
           onOpen={() => setOpenKey(question.key)}
@@ -109,6 +109,10 @@ function MuscleQuiz() {
           style={{ '--x': x, '--y': y }}
         />
       ))
+  }
+
+  if (quizMuscles.length === 0) {
+    return <p className="subtitle">No muscles with images yet — add some to src/assets/muscles.</p>
   }
 
   return (

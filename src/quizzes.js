@@ -1,7 +1,11 @@
-// Placeholder quizzes — names and descriptions will be replaced once the
-// muscle/bone data model is defined.
+// Quizzes on the landing page. The ones without a component in pages/Quiz.jsx
+// show a "coming soon" placeholder.
 export const quizzes = [
-  { id: 'quiz-1', title: 'Quiz 1', description: 'Placeholder description' },
+  {
+    id: 'quiz-1',
+    title: 'Muscle properties',
+    description: 'See a muscle and name it, its shape, region, depth and more.',
+  },
   { id: 'quiz-2', title: 'Quiz 2', description: 'Placeholder description' },
   { id: 'quiz-3', title: 'Quiz 3', description: 'Placeholder description' },
   { id: 'quiz-4', title: 'Quiz 4', description: 'Placeholder description' },
