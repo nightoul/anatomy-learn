@@ -6,7 +6,6 @@ function Home() {
     <main>
       <header>
         <h1>Anatomy Learn</h1>
-        <p className="subtitle">Learn muscles and bones through short quizzes.</p>
       </header>
 
       <ul className="quiz-list">

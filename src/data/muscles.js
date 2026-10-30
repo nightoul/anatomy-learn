@@ -43,7 +43,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'obliquus-externus-abdominis',
@@ -55,7 +54,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'obliquus-internus-abdominis',
@@ -67,7 +65,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'transversus-abdominis',
@@ -79,7 +76,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'rectus-abdominis',
@@ -91,7 +87,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'quadratus-lumborum',
@@ -103,7 +98,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'pelvic-floor',
@@ -115,7 +109,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
 
   // Spine
@@ -129,7 +122,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'erector-spinae-thoracic',
@@ -141,7 +133,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'deep-spinal-stabilizers-lumbar',
@@ -153,7 +144,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'deep-spinal-stabilizers-thoracic',
@@ -165,7 +155,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
 
   // Thoracic wall
@@ -179,7 +168,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'transversus-thoracis',
@@ -191,7 +179,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'serratus-posterior-inferior',
@@ -203,7 +190,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'serratus-posterior-superior',
@@ -215,7 +201,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
 
   // Shoulder girdle
@@ -229,7 +214,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'trapezius-middle',
@@ -241,7 +225,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'trapezius-lower',
@@ -253,7 +236,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'serratus-anterior',
@@ -265,7 +247,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'pectoralis-minor',
@@ -277,7 +258,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'levator-scapulae',
@@ -289,7 +269,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'subclavius',
@@ -301,7 +280,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'rhomboideus-major',
@@ -313,7 +291,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'rhomboideus-minor',
@@ -325,7 +302,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
 
   // Shoulder joint
@@ -339,7 +315,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'deltoideus',
@@ -351,7 +326,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'pectoralis-major',
@@ -363,7 +337,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'teres-major',
@@ -375,7 +348,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'supraspinatus',
@@ -387,7 +359,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'infraspinatus',
@@ -399,7 +370,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'teres-minor',
@@ -411,7 +381,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'subscapularis',
@@ -423,7 +392,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
 
   // Neck
@@ -437,7 +405,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'longus-colli',
@@ -449,7 +416,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'splenius-capitis',
@@ -461,7 +427,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'splenius-cervicis',
@@ -473,7 +438,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'sternocleidomastoideus',
@@ -485,7 +449,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'scalenus-anterior',
@@ -497,7 +460,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'scalenus-medius',
@@ -509,7 +471,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'scalenus-posterior',
@@ -521,7 +482,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'rectus-capitis-anterior',
@@ -533,7 +493,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'rectus-capitis-lateralis',
@@ -545,7 +504,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'semispinalis-capitis',
@@ -557,7 +515,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'deep-spinal-stabilizers-cervical',
@@ -569,7 +526,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'suboccipital-group',
@@ -581,7 +537,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'erector-spinae-cervical',
@@ -593,7 +548,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
 
   // Hips
@@ -607,7 +561,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: NOT_PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'adductor-longus',
@@ -619,7 +572,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'gluteus-medius',
@@ -631,7 +583,6 @@ const muscleData = [
     depth: INTERMEDIATE,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'gluteus-minimus',
@@ -643,7 +594,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'iliacus',
@@ -655,7 +605,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'sartorius',
@@ -667,7 +616,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'gracilis',
@@ -679,7 +627,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'psoas-major',
@@ -691,7 +638,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'psoas-minor',
@@ -703,7 +649,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'tensor-fasciae-latae',
@@ -715,7 +660,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'pectineus',
@@ -727,7 +671,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'gluteus-maximus',
@@ -739,7 +682,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'adductor-magnus',
@@ -751,7 +693,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: '',
-    exerciseGroup: '',
   },
   {
     id: 'deep-external-hip-rotators',
@@ -763,7 +704,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
 
   // Legs
@@ -777,7 +717,6 @@ const muscleData = [
     depth: DEEP,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'biceps-femoris',
@@ -789,7 +728,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'semitendinosus',
@@ -801,7 +739,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'rectus-femoris',
@@ -813,7 +750,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: TIGHTNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'vastus-medialis',
@@ -825,7 +761,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'vastus-lateralis',
@@ -837,7 +772,6 @@ const muscleData = [
     depth: SUPERFICIAL,
     palpable: PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
   {
     id: 'vastus-intermedius',
@@ -849,7 +783,6 @@ const muscleData = [
     depth: DEEP,
     palpable: NOT_PALPABLE,
     jandaType: WEAKNESS_PRONE,
-    exerciseGroup: '',
   },
 ]
 

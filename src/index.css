@@ -101,36 +101,6 @@ h1 {
   color: var(--accent);
 }
 
-.start-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 4rem;
-}
-
-.start-button {
-  width: 12rem;
-  height: 12rem;
-  border: none;
-  border-radius: 50%;
-  background: var(--button-bg);
-  color: #fff;
-  font: inherit;
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  box-shadow: 0 10px 30px -10px var(--button-bg);
-  transition: transform 0.15s;
-}
-
-.start-button:hover {
-  transform: scale(1.04);
-}
-
-.start-button:active {
-  transform: scale(0.97);
-}
-
 .quiz-modal {
   width: min(95vw, 80rem);
   height: min(92vh, 64rem);

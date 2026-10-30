@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { muscles } from '../data/muscles.js'
-import { answerFor, questionsFor } from '../data/questions.js'
+import { questionsFor } from '../data/questions.js'
 import { randomLayout } from './layout.js'
 import QuestionChip from './QuestionChip.jsx'
 
@@ -36,7 +36,9 @@ function MuscleQuiz() {
   const [index, setIndex] = useState(0)
   // Bumped on every new muscle so the question chips start fresh.
   const [round, setRound] = useState(0)
-  const [layout, setLayout] = useState([])
+  const [layout, setLayout] = useState(() =>
+    quizMuscles.length > 0 ? randomLayout(questionsFor(quizMuscles[0])) : [],
+  )
   const [solved, setSolved] = useState({})
   const [openKey, setOpenKey] = useState(null)
   const [finished, setFinished] = useState(false)
@@ -62,10 +64,11 @@ function MuscleQuiz() {
     load(0)
   }
 
-  function start() {
-    restart()
-    dialogRef.current.showModal()
-  }
+  // The quiz opens as soon as its page is shown; closing it goes back home.
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!dialog.open) dialog.showModal()
+  }, [])
 
   function advance() {
     if (isLast) setFinished(true)
@@ -77,9 +80,8 @@ function MuscleQuiz() {
     advance()
   }
 
-  function backToQuizzes() {
+  function close() {
     dialogRef.current.close()
-    navigate('/')
   }
 
   function handleCancel(event) {
@@ -97,7 +99,7 @@ function MuscleQuiz() {
         <QuestionChip
           key={`${round}-${question.key}`}
           question={question}
-          value={answerFor(muscle, question)}
+          value={muscle[question.key]}
           solved={Boolean(solved[question.key])}
           open={openKey === question.key}
           onOpen={() => setOpenKey(question.key)}
@@ -111,71 +113,63 @@ function MuscleQuiz() {
       ))
   }
 
-  if (quizMuscles.length === 0) {
-    return <p className="subtitle">No muscles with images yet — add some to src/assets/muscles.</p>
-  }
-
   return (
-    <>
-      <div className="start-wrapper">
-        <button type="button" className="start-button" onClick={start}>
-          START
-        </button>
-      </div>
-
-      <dialog ref={dialogRef} className="quiz-modal" onCancel={handleCancel}>
-        <button
-          type="button"
-          className="modal-close"
-          aria-label="Close"
-          onClick={() => dialogRef.current.close()}
-        >
-          ×
-        </button>
-        {finished ? (
-          <div className={`congrats ${result.tier}`}>
-            <span className="congrats-check" aria-hidden="true">
-              {result.icon}
-            </span>
-            <h2>{result.title}</h2>
-            <p className="score">
-              <strong>{correctCount}</strong> / {quizMuscles.length}
-            </p>
-            <p className="subtitle">
-              You got {correctCount} of {quizMuscles.length} muscles right. {result.message}
-            </p>
-            <div className="congrats-actions">
-              <button type="button" className="next-button" onClick={restart}>
-                Play again
-              </button>
-              <button type="button" className="secondary-button" onClick={backToQuizzes}>
-                Back to quizzes
-              </button>
-            </div>
+    <dialog
+      ref={dialogRef}
+      className="quiz-modal"
+      onCancel={handleCancel}
+      onClose={() => navigate('/')}
+    >
+      <button type="button" className="modal-close" aria-label="Close" onClick={close}>
+        ×
+      </button>
+      {quizMuscles.length === 0 ? (
+        <div className="congrats">
+          <p className="subtitle">No muscles with images yet — add some to src/assets/muscles.</p>
+        </div>
+      ) : finished ? (
+        <div className={`congrats ${result.tier}`}>
+          <span className="congrats-check" aria-hidden="true">
+            {result.icon}
+          </span>
+          <h2>{result.title}</h2>
+          <p className="score">
+            <strong>{correctCount}</strong> / {quizMuscles.length}
+          </p>
+          <p className="subtitle">
+            You got {correctCount} of {quizMuscles.length} muscles right. {result.message}
+          </p>
+          <div className="congrats-actions">
+            <button type="button" className="next-button" onClick={restart}>
+              Play again
+            </button>
+            <button type="button" className="secondary-button" onClick={close}>
+              Back to quizzes
+            </button>
           </div>
-        ) : (
-          <>
-            <div className="modal-body">
-              <div className="question-column left">{renderChips('left')}</div>
-              <div className="image-cell">
-                <img src={muscle.image} alt="Muscle to identify" className="muscle-image" />
-              </div>
-              <div className="question-column right">{renderChips('right')}</div>
+        </div>
+      ) : (
+        <>
+          <div className="modal-body">
+            <div className="question-column left">{renderChips('left')}</div>
+            <div className="image-cell">
+              <img src={muscle.image} alt="Muscle to identify" className="muscle-image" />
             </div>
-            <div className="modal-footer">
-              {!allSolved && (
-                <button type="button" className="secondary-button" onClick={advance}>
-                  SKIP
-                </button>
-              )}
-              <button type="button" className="next-button" onClick={next} disabled={!allSolved}>
-                {isLast ? 'FINISH' : 'NEXT →'}
+            <div className="question-column right">{renderChips('right')}</div>
+          </div>
+          <div className="modal-footer">
+            {!allSolved && (
+              <button type="button" className="secondary-button" onClick={advance}>
+                SKIP
               </button>
-            </div>
-          </>
-        )}
-      </dialog>
-    </>
+            )}
+            <button type="button" className="next-button" onClick={next} disabled={!allSolved}>
+              {isLast ? 'FINISH' : 'NEXT →'}
+            </button>
+          </div>
+        </>
+      )}
+    </dialog>
   )
 }
 
