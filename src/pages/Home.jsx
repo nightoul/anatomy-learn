@@ -5,7 +5,7 @@ function Home() {
   return (
     <main>
       <header>
-        <h1>Anatomy Learn</h1>
+        <h1>The Body</h1>
       </header>
 
       <ul className="quiz-list">

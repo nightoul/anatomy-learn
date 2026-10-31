@@ -1,4 +1,4 @@
-# anatomy-learn
+# the-body
 
 A quiz app for learning muscles and how they work together in movement.
 Built with React + Vite and deployed to GitHub Pages by the workflow in
