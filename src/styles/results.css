@@ -1,0 +1,60 @@
+.congrats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.congrats h2 {
+  margin: 1.5rem 0 0;
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+}
+
+.congrats-check {
+  display: grid;
+  place-items: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: var(--success);
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  animation: pop 0.5s ease-out;
+}
+
+.congrats.good .congrats-check {
+  background: var(--warning);
+}
+
+.congrats.practice .congrats-check {
+  background: var(--button-bg);
+}
+
+.congrats .subtitle {
+  max-width: 28rem;
+}
+
+.congrats-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.score {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.score strong {
+  color: var(--text);
+  font-size: 3rem;
+}

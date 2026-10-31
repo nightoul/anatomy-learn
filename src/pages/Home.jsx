@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { quizzes } from '../quizzes.js'
+import { quizzes } from '../quizzes/index.js'
 
 function Home() {
   return (

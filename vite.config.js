@@ -5,4 +5,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   base: '/anatomy-learn/',
+  // Unit tests (Vitest) live in the tests/ folder.
+  test: {
+    include: ['tests/**/*.test.js'],
+  },
 })

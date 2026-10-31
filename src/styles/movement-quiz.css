@@ -1,0 +1,108 @@
+/* Movement quiz: title on top, role boxes left, picture in the middle,
+   single questions and region boxes right. */
+.movement-body {
+  --chip-width: 14rem;
+
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(15rem, 1fr) minmax(0, 1.3fr) minmax(15rem, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 1rem 1.5rem;
+  padding: 1.5rem 1.5rem 5rem;
+}
+
+.movement-title {
+  grid-column: 1 / -1;
+  padding-right: 3rem;
+}
+
+.movement-title h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.movement-czech {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.movement-title .subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.movement-column {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+}
+
+.movement-center {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.movement-center .image-cell {
+  flex: 1;
+}
+
+
+.movement-explanation {
+  flex: none;
+  max-height: 40%;
+  overflow-y: auto;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--success);
+  border-radius: 0.75rem;
+  background: var(--success-bg);
+  font-size: 0.85rem;
+}
+
+.movement-explanation p {
+  margin: 0;
+}
+
+.movement-explanation p + p {
+  margin-top: 0.5rem;
+}
+
+.single-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 760px) {
+  .movement-body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  /* Stacked and scrolling: every part keeps its natural height. */
+  .movement-body > * {
+    flex: none;
+  }
+
+  .movement-title {
+    order: -2;
+  }
+
+  .movement-center {
+    order: -1;
+  }
+
+  .movement-center .image-cell {
+    flex: none;
+    height: 35vh;
+  }
+
+  .movement-column {
+    overflow: visible;
+  }
+}

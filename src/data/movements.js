@@ -12,7 +12,7 @@ import {
   SIDES,
   UNILATERAL,
 } from './answerValues.js'
-import { byFileName, reportDataError } from './dataHelpers.js'
+import { byFileName, checkEntries, reportDataError } from './dataHelpers.js'
 import { muscles } from './muscles.js'
 
 // Every image in src/assets/movements, keyed by file name.
@@ -246,20 +246,21 @@ const movementData = [
 export const ROLES = ['agonists', 'synergists', 'antagonists', 'stabilizers']
 
 // Catch typos in the data as soon as the file is loaded.
-const allowed = {
-  contraction: CONTRACTIONS,
-  plane: PLANES,
-  chain: CHAINS,
-  sides: SIDES,
-  gravity: GRAVITY_RELATIONS,
-}
+checkEntries({
+  file: 'movements.js',
+  entries: movementData,
+  allowed: {
+    contraction: CONTRACTIONS,
+    plane: PLANES,
+    chain: CHAINS,
+    sides: SIDES,
+    gravity: GRAVITY_RELATIONS,
+  },
+  imageUrls,
+  folder: 'src/assets/movements',
+})
 const muscleIds = new Set(muscles.map((m) => m.id))
 for (const movement of movementData) {
-  for (const [key, values] of Object.entries(allowed)) {
-    if (!values.includes(movement[key])) {
-      reportDataError(`movements.js: "${movement.id}" has an unknown ${key}: ${JSON.stringify(movement[key])}`)
-    }
-  }
   const seen = new Set()
   for (const role of ROLES) {
     for (const id of movement[role]) {

@@ -1,22 +1,14 @@
 import { Link, useParams } from 'react-router'
-import { quizzes } from '../quizzes.js'
-import MovementQuiz from '../quizzes/MovementQuiz.jsx'
-import MuscleQuiz from '../quizzes/MuscleQuiz.jsx'
+import { quizzes } from '../quizzes/index.js'
 import Home from './Home.jsx'
-
-// Quizzes that have been implemented; the rest show a "coming soon" placeholder.
-const quizComponents = {
-  'quiz-1': MuscleQuiz,
-  'quiz-2': MovementQuiz,
-}
 
 function Quiz() {
   const { quizId } = useParams()
   const quiz = quizzes.find((q) => q.id === quizId)
-  const QuizComponent = quizComponents[quizId]
 
   // An implemented quiz opens straight away as a modal over the homepage.
-  if (QuizComponent) {
+  if (quiz?.component) {
+    const QuizComponent = quiz.component
     return (
       <>
         <Home />

@@ -1,0 +1,70 @@
+.question-chip {
+  display: flex;
+  /* Natural width, so a chip near the column's right edge doesn't get squeezed. */
+  width: max-content;
+  max-width: var(--chip-width);
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+}
+
+button.question-chip {
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+button.question-chip:hover {
+  border-color: var(--accent);
+}
+
+.question-chip.open {
+  z-index: 1;
+  width: var(--chip-width);
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.6rem 0.75rem;
+  border-color: var(--accent);
+  border-radius: 0.75rem;
+}
+
+.chip-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.question-chip.solved {
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1rem 0.4rem 0.5rem;
+  border-color: var(--success);
+  border-radius: 0.75rem;
+  background: var(--success-bg);
+}
+
+.question-chip.solved .chip-label {
+  font-size: 0.7rem;
+}
+
+.chip-answer {
+  display: block;
+  font-weight: 600;
+}
+
+.check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--success);
+  color: #fff;
+  font-weight: 700;
+  animation: pop 0.35s ease-out;
+}

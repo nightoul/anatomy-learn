@@ -8,7 +8,7 @@ const OPTIONAL_WORDS = new Set(['sval', 'svaly', 'musculus', 'musculi', 'm.', 'm
 
 // Case, diacritics, extra whitespace and the optional words don't matter:
 // "velky bederni" is as good as "velký bederní".
-function normalize(text) {
+export function normalize(text) {
   return text
     .normalize('NFD')
     .replace(/\p{Diacritic}/gu, '')

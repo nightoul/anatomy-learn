@@ -1,0 +1,69 @@
+.answer-box {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--bg);
+}
+
+.answer-box.complete {
+  border-color: var(--success);
+  background: var(--success-bg);
+}
+
+.answer-box-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.answer-box-label {
+  font-weight: 600;
+}
+
+.answer-box-count {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.answer-box.complete .answer-box-count {
+  color: var(--success);
+}
+
+.answer-box-found {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.answer-box-found li,
+.found-chip {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--success);
+  color: #fff;
+  font-size: 0.8rem;
+  animation: pop 0.3s ease-out;
+}
+
+.answer-box-hint {
+  margin: 0.35rem 0 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+/* Revealed answers (not named, shown once a box is complete). */
+.answer-box-found li.revealed {
+  border: 1px dashed var(--success);
+  background: transparent;
+  color: var(--text);
+}
+
+.answer-box-note {
+  color: var(--muted);
+  font-weight: 400;
+}
+

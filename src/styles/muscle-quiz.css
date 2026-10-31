@@ -1,0 +1,75 @@
+/* Image in the middle, questions scattered over the columns on either side. */
+.muscle-body {
+  --chip-width: 14rem;
+  /* Height of an opened question; keeps it inside the column. */
+  --chip-height: 5.25rem;
+
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  /* The image column is only as wide as a square image of full height needs
+     (modal height minus this padding), so the question columns get all the
+     remaining width. cqh/cqw refer to the modal, see .quiz-modal. */
+  grid-template-columns:
+    minmax(var(--chip-width), 1fr)
+    min(100cqh - 9rem, 100cqw - 3rem - 2 * var(--chip-width) - 2rem)
+    minmax(var(--chip-width), 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 1rem;
+  /* Equal top/bottom padding keeps the image vertically centred in the modal;
+     the bottom padding also leaves room for the floating NEXT button. */
+  padding: 4.5rem 1.5rem;
+}
+
+.question-column {
+  position: relative;
+}
+
+/* The left column also uses the space above and below the image; the right one
+   only above, so it stays clear of the close button and the NEXT button. */
+.question-column.left {
+  margin-block: -3rem;
+}
+
+.question-column.right {
+  margin-top: -1rem;
+}
+
+/* `left` + `translate` keep a chip of any width inside the column: x = 0 puts it
+   at the left edge, x = 1 at the right edge. */
+.question-column .question-chip {
+  position: absolute;
+  left: calc(var(--x) * 100%);
+  translate: calc(var(--x) * -100%) 0;
+  top: max(0px, calc(var(--y) * (100% - var(--chip-height))));
+}
+
+/* Narrow screens: image on top, questions flow underneath. */
+@media (max-width: 760px) {
+  .muscle-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .question-column.left,
+  .question-column.right {
+    margin: 0;
+  }
+
+  /* The image shrinks to leave room for the questions. */
+  .muscle-body .image-cell {
+    order: -1;
+    flex: 1;
+  }
+
+  .question-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .question-column .question-chip {
+    position: static;
+    translate: none;
+  }
+}

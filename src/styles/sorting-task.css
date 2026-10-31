@@ -1,0 +1,67 @@
+/* Sorting task: the muscles to sort (under the picture) and the boxes they go into. */
+.sort-pool {
+  padding: 0.6rem 0.75rem;
+  border: 1px dashed var(--border);
+  border-radius: 0.75rem;
+}
+
+.sort-instructions {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.sort-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.sort-chip {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.sort-chip:hover {
+  border-color: var(--accent);
+}
+
+.sort-chip.selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.sort-target {
+  display: block;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.sort-target.armed:not(.complete) {
+  border-color: var(--accent);
+  border-style: dashed;
+  cursor: pointer;
+}
+
+.sort-chip[draggable='true'] {
+  cursor: grab;
+}
+
+.sort-target[aria-disabled='true'] {
+  cursor: default;
+}
+
+.sort-target.drag-over:not(.complete) {
+  border-style: solid;
+  border-color: var(--accent);
+  background: var(--surface);
+}

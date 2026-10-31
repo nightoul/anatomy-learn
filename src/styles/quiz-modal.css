@@ -1,0 +1,60 @@
+.quiz-modal {
+  width: min(95vw, 80rem);
+  height: min(92vh, 64rem);
+  max-width: none;
+  max-height: none;
+  overflow: hidden;
+  container-type: size;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.quiz-modal::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.quiz-modal[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-footer {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Shown instead of a quiz that has nothing to ask yet. */
+.quiz-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}

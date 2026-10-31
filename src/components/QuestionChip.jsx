@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { acceptedAnswers, isCorrect } from './answers.js'
+import { acceptedAnswers, isCorrect } from '../lib/answers.js'
 
 function QuestionChip({ question, value, solved, open, onOpen, onClose, onSolved, style }) {
   const [draft, setDraft] = useState('')
@@ -50,7 +50,7 @@ function QuestionChip({ question, value, solved, open, onOpen, onClose, onSolved
       </label>
       <input
         id={`answer-${question.key}`}
-        className="chip-input"
+        className="text-input"
         value={draft}
         onChange={handleChange}
         onBlur={onClose}

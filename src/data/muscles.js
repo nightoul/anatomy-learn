@@ -19,15 +19,15 @@ import {
   TIGHTNESS_PRONE,
   WEAKNESS_PRONE,
 } from './answerValues.js'
-import { byFileName, reportDataError } from './dataHelpers.js'
-import { FLAT, QUADRILATERAL, RIBBON, ROPE, SHAPES, SMALL, SPINDLE, TRIANGULAR } from './shapes.js'
+import { byFileName, checkEntries } from './dataHelpers.js'
+import { FLAT, QUADRILATERAL, RIBBON, ROPE, SHAPES, SMALL, SPINDLE, TRIANGULAR } from './muscleShapes.js'
 
 // Every image in src/assets/muscles, keyed by file name.
 const imageUrls = byFileName(
   import.meta.glob('../assets/muscles/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' }),
 )
 
-// One property per question in questions.js. A value can be a single answer or
+// One property per question in muscleQuestions.js. A value can be a single answer or
 // a list of accepted answers; the first one is shown once the question is solved.
 // `image` is a file name in src/assets/muscles — muscles whose file doesn't
 // exist yet are skipped by the quiz.
@@ -776,29 +776,22 @@ const muscleData = [
 ]
 
 // Catch typos in the data as soon as the file is loaded.
-const allowed = {
-  shape: SHAPES,
-  region: REGIONS,
-  depth: DEPTHS,
-  palpable: PALPABILITY,
-  jandaType: ['', ...JANDA_TYPES],
-}
-const ids = new Set()
-for (const muscle of muscleData) {
-  if (ids.has(muscle.id)) reportDataError(`muscles.js: duplicate id "${muscle.id}"`)
-  ids.add(muscle.id)
-  for (const [key, values] of Object.entries(allowed)) {
-    if (!values.includes(muscle[key])) {
-      reportDataError(`muscles.js: "${muscle.id}" has an unknown ${key}: ${JSON.stringify(muscle[key])}`)
-    }
-  }
-}
-const usedImages = new Set(muscleData.map((m) => m.image))
-for (const file of Object.keys(imageUrls)) {
-  if (!usedImages.has(file)) console.warn(`src/assets/muscles/${file} isn't used by any muscle — check the file name.`)
-}
+checkEntries({
+  file: 'muscles.js',
+  entries: muscleData,
+  allowed: {
+    shape: SHAPES,
+    region: REGIONS,
+    depth: DEPTHS,
+    palpable: PALPABILITY,
+    jandaType: ['', ...JANDA_TYPES],
+  },
+  imageUrls,
+  folder: 'src/assets/muscles',
+})
 
 export const muscles = muscleData.map((muscle) => ({
   ...muscle,
   image: imageUrls[muscle.image] ?? null,
+  imageFile: muscle.image,
 }))

@@ -10,7 +10,7 @@ export const questions = [
   { key: 'jandaType', label: 'Janda type' },
 ]
 
-export function hasAnswer(value) {
+function hasAnswer(value) {
   return Array.isArray(value) ? value.length > 0 : Boolean(value)
 }
 

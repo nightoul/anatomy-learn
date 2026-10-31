@@ -1,0 +1,22 @@
+/* All styles of the app, in the order they apply. Later files can build on
+   earlier ones: global basics first, then shared components, then pages and
+   the quizzes' own layouts. */
+
+/* Colours, base styles, buttons and animations used everywhere */
+@import './base.css';
+
+/* Shared components */
+@import './quiz-modal.css';
+@import './quiz-image.css';
+@import './question-chip.css';
+@import './answer-box.css';
+@import './sorting-task.css';
+@import './results.css';
+
+/* Pages */
+@import './home.css';
+@import './quiz-page.css';
+
+/* Quizzes */
+@import './muscle-quiz.css';
+@import './movement-quiz.css';
