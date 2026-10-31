@@ -1,38 +1,16 @@
-import { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useState } from 'react'
 import { muscles } from '../data/muscles.js'
 import { questionsFor } from '../data/questions.js'
 import { randomLayout } from './layout.js'
 import QuestionChip from './QuestionChip.jsx'
+import Results from './Results.jsx'
+import { useQuizDialog } from './useQuizDialog.js'
 
 // Only muscles with an image are quizzed; each gets the questions it has answers for.
 const quizMuscles = muscles.filter((m) => m.image && questionsFor(m).length > 0)
 
-// Results screen by score: over 90 % / 60–90 % / under 60 %.
-function resultFor(correct, total) {
-  const ratio = correct / total
-  if (ratio > 0.9) {
-    return { tier: 'great', icon: '✓', title: 'Well done!', message: 'You know your muscles.' }
-  }
-  if (ratio >= 0.6) {
-    return {
-      tier: 'good',
-      icon: '★',
-      title: 'Good job!',
-      message: "Almost there. A few more rounds and you'll have them all.",
-    }
-  }
-  return {
-    tier: 'practice',
-    icon: '↻',
-    title: 'Keep practicing',
-    message: 'Every round helps. Try again and the names will start to stick.',
-  }
-}
-
 function MuscleQuiz() {
-  const dialogRef = useRef(null)
-  const navigate = useNavigate()
+  const { dialogRef, close, onClose } = useQuizDialog()
   const [index, setIndex] = useState(0)
   // Bumped on every new muscle so the question chips start fresh.
   const [round, setRound] = useState(0)
@@ -48,7 +26,6 @@ function MuscleQuiz() {
   const muscle = quizMuscles[index]
   const allSolved = Boolean(muscle) && questionsFor(muscle).every((q) => solved[q.key])
   const isLast = index === quizMuscles.length - 1
-  const result = resultFor(correctCount, quizMuscles.length)
 
   function load(i) {
     setIndex(i)
@@ -64,12 +41,6 @@ function MuscleQuiz() {
     load(0)
   }
 
-  // The quiz opens as soon as its page is shown; closing it goes back home.
-  useEffect(() => {
-    const dialog = dialogRef.current
-    if (!dialog.open) dialog.showModal()
-  }, [])
-
   function advance() {
     if (isLast) setFinished(true)
     else load(index + 1)
@@ -78,10 +49,6 @@ function MuscleQuiz() {
   function next() {
     setCorrectCount((c) => c + 1)
     advance()
-  }
-
-  function close() {
-    dialogRef.current.close()
   }
 
   function handleCancel(event) {
@@ -114,12 +81,7 @@ function MuscleQuiz() {
   }
 
   return (
-    <dialog
-      ref={dialogRef}
-      className="quiz-modal"
-      onCancel={handleCancel}
-      onClose={() => navigate('/')}
-    >
+    <dialog ref={dialogRef} className="quiz-modal" onCancel={handleCancel} onClose={onClose}>
       <button type="button" className="modal-close" aria-label="Close" onClick={close}>
         ×
       </button>
@@ -128,26 +90,13 @@ function MuscleQuiz() {
           <p className="subtitle">No muscles with images yet — add some to src/assets/muscles.</p>
         </div>
       ) : finished ? (
-        <div className={`congrats ${result.tier}`}>
-          <span className="congrats-check" aria-hidden="true">
-            {result.icon}
-          </span>
-          <h2>{result.title}</h2>
-          <p className="score">
-            <strong>{correctCount}</strong> / {quizMuscles.length}
-          </p>
-          <p className="subtitle">
-            You got {correctCount} of {quizMuscles.length} muscles right. {result.message}
-          </p>
-          <div className="congrats-actions">
-            <button type="button" className="next-button" onClick={restart}>
-              Play again
-            </button>
-            <button type="button" className="secondary-button" onClick={close}>
-              Back to quizzes
-            </button>
-          </div>
-        </div>
+        <Results
+          correct={correctCount}
+          total={quizMuscles.length}
+          unit="muscles"
+          onRestart={restart}
+          onClose={close}
+        />
       ) : (
         <>
           <div className="modal-body">
